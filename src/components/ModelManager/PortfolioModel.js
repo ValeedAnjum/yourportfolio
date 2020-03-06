@@ -1,12 +1,17 @@
 import React from 'react'
 
-const PortfolioModel = ({Payload}) => {
-    const {image,name,des} = Payload;
+const PortfolioModel = ({Payload,hideDetailItem}) => {
+    // const {image,name,des} = Payload;
+    const hideDetails = () => {
+        const body = document.getElementsByTagName('body')[0];
+        body.classList.remove('modal-open');
+        hideDetailItem();
+    }
     return (
         <React.Fragment>
             <div
             className="portfolio-modal modal fade show"
-            id="portfolioModal2"
+            id="portfolioModal1"
             tabIndex="-1"
             role="dialog"
             aria-labelledby="portfolioModal2Label"
@@ -19,7 +24,7 @@ const PortfolioModel = ({Payload}) => {
                 <div className="modal-content">
                     <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">
-                            <i className="fas fa-times"></i>
+                            <i className="fas fa-times" onClick={hideDetails}></i>
                         </span>
                     </button>
                     <div className="modal-body text-center">
@@ -39,8 +44,9 @@ const PortfolioModel = ({Payload}) => {
                                         Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis
                                         inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod
                                         consequuntur itaque. Nam.</p>
-                                    <button className="btn btn-primary" href="#" data-dismiss="modal">
+                                    <button className="btn btn-primary" href="#" data-dismiss="modal" onClick={hideDetails}>
                                         <i className="fas fa-times fa-fw"></i>
+                                        Close Window
                                     </button>
                                 </div>
                             </div>

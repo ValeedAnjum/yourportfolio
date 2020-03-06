@@ -1,4 +1,5 @@
 .portfolio-modal {
-  position: absolute;
-  overflow: unset;
+  display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
 }

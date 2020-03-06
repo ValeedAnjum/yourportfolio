@@ -3,6 +3,12 @@ import {connect} from 'react-redux';
 import PortfolioItem from './PortfolioItem';
 import { openPortfolioModel } from '../../store/Actions/ModelActions';
 const Portfolio = ({portfolioItems,detailItem}) => {
+    const details = async Item =>  {
+        const body = document.getElementsByTagName('body')[0];
+        body.classList.add('modal-open');
+        detailItem(Item);
+        //document.getElementById('portfolioModal1').focus();
+    }
     return (
             <section className="page-section portfolio" id="portfolio">
             <div className="container">
@@ -17,7 +23,7 @@ const Portfolio = ({portfolioItems,detailItem}) => {
                 <div className="row">
                     {
                         portfolioItems.map((Item,Index) => {
-                            return <PortfolioItem detailItem={() => detailItem(Item)} key={Index} imgSrc={Item.image} />
+                            return <PortfolioItem detailItem={() => details(Item)} key={Index} imgSrc={Item.image} />
                         })
                     }
                 </div>
