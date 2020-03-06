@@ -6,18 +6,19 @@ import Portfolio from './components/Portfolio/Portfolio';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
-import PortfolioModel from './components/ModelManager/PortfolioModel';
+import ModelManger from './components/ModelManager/ModelManger';
 
 function App() {
   return (
     <React.Fragment>
       <Navbar />
       <Masthead />
-      <Portfolio />
+      <Portfolio portfolioItems = 
+      {[{image:'img/portfolio/cabin.png',name:'p1',des:'des p1'},{image:'img/portfolio/cake.png',name:'p2',des:'des p2'}]}/>
       <About />
       <Contact />
       <Footer />
-      
+      <ModelManger />
     </React.Fragment>
   );
 }

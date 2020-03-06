@@ -1,5 +1,3 @@
-console.log('a');
-
 window.onload = function() {
   (function($) {
     "use strict"; // Start of use strict
@@ -7,7 +5,6 @@ window.onload = function() {
     $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
       if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
         var target = $(this.hash);
-        console.log('smooth');
         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
         if (target.length) {
           $('html, body').animate({
@@ -20,8 +17,6 @@ window.onload = function() {
     // Scroll to top button appear
     $(document).scroll(function() {
       var scrollDistance = $(this).scrollTop();
-      console.log('scroll');
-  
       if (scrollDistance > 100) {
         
         $('.scroll-to-top').fadeIn();

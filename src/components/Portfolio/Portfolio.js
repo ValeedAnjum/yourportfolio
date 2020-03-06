@@ -1,14 +1,10 @@
-import React,{useState} from 'react'
-import PortfolioModel from '../ModelManager/PortfolioModel';
-
-const Portfolio = () => {
-    const [portTest, setportTest] = useState(false);
-    const toggle = () => {
-        setportTest(!portTest);
-    }
+import React from 'react'
+import {connect} from 'react-redux';
+import PortfolioItem from './PortfolioItem';
+import { openPortfolioModel } from '../../store/Actions/ModelActions';
+const Portfolio = ({portfolioItems,detailItem}) => {
     return (
-        <React.Fragment>
-            <section className="page-section portfolio" id="portfolio" onClick={toggle}>
+            <section className="page-section portfolio" id="portfolio">
             <div className="container">
                 <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
                 <div className="divider-custom">
@@ -19,100 +15,25 @@ const Portfolio = () => {
                     <div className="divider-custom-line"></div>
                 </div>
                 <div className="row">
-                    <div className="col-md-6 col-lg-4">
-                        <div
-                            className="portfolio-item mx-auto"
-                            data-toggle="modal"
-                            data-target="#portfolioModal1">
-                            <div
-                                className="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div className="portfolio-item-caption-content text-center text-white">
-                                    <i className="fas fa-plus fa-3x"></i>
-                                </div>
-                            </div>
-                            <img className="img-fluid" src="img/portfolio/cabin.png" alt=""/>
-                        </div>
-                    </div>
-                    <div className="col-md-6 col-lg-4">
-                        <div
-                            className="portfolio-item mx-auto"
-                            data-toggle="modal"
-                            data-target="#portfolioModal2">
-                            <div
-                                className="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div className="portfolio-item-caption-content text-center text-white">
-                                    <i className="fas fa-plus fa-3x"></i>
-                                </div>
-                            </div>
-                            <img className="img-fluid" src="img/portfolio/cake.png" alt=""/>
-                        </div>
-                    </div>
-                    <div className="col-md-6 col-lg-4">
-                        <div
-                            className="portfolio-item mx-auto"
-                            data-toggle="modal"
-                            data-target="#portfolioModal3">
-                            <div
-                                className="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div className="portfolio-item-caption-content text-center text-white">
-                                    <i className="fas fa-plus fa-3x"></i>
-                                </div>
-                            </div>
-                            <img className="img-fluid" src="img/portfolio/circus.png" alt=""/>
-                        </div>
-                    </div>
-                    <div className="col-md-6 col-lg-4">
-                        <div
-                            className="portfolio-item mx-auto"
-                            data-toggle="modal"
-                            data-target="#portfolioModal4">
-                            <div
-                                className="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div className="portfolio-item-caption-content text-center text-white">
-                                    <i className="fas fa-plus fa-3x"></i>
-                                </div>
-                            </div>
-                            <img className="img-fluid" src="img/portfolio/game.png" alt=""/>
-                        </div>
-                    </div>
-                    <div className="col-md-6 col-lg-4">
-                        <div
-                            className="portfolio-item mx-auto"
-                            data-toggle="modal"
-                            data-target="#portfolioModal5">
-                            <div
-                                className="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div className="portfolio-item-caption-content text-center text-white">
-                                    <i className="fas fa-plus fa-3x"></i>
-                                </div>
-                            </div>
-                            <img className="img-fluid" src="img/portfolio/safe.png" alt=""/>
-                        </div>
-                    </div>
-                    <div className="col-md-6 col-lg-4">
-                        <div
-                            className="portfolio-item mx-auto"
-                            data-toggle="modal"
-                            data-target="#portfolioModal6">
-                            <div
-                                className="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div className="portfolio-item-caption-content text-center text-white">
-                                    <i className="fas fa-plus fa-3x"></i>
-                                </div>
-                            </div>
-                            <img className="img-fluid" src="img/portfolio/submarine.png" alt=""/>
-                        </div>
-                    </div>
-
+                    {
+                        portfolioItems.map((Item,Index) => {
+                            return <PortfolioItem detailItem={() => detailItem(Item)} key={Index} imgSrc={Item.image} />
+                        })
+                    }
                 </div>
             </div>
         </section>
-        {
-            portTest ? <PortfolioModel />:null
-        }
-        </React.Fragment>
-
     )
 }
 
-export default Portfolio
+const mapState = state => {
+    return {
+
+    }
+}
+const mapDispatch = dispatch => {
+    return {
+        detailItem:item => dispatch(openPortfolioModel(item))
+    }
+}
+export default connect(mapState,mapDispatch)(Portfolio);
