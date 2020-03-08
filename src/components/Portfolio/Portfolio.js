@@ -2,17 +2,17 @@ import React from 'react'
 import {connect} from 'react-redux';
 import PortfolioItem from './PortfolioItem';
 import { openPortfolioModel } from '../../store/Actions/ModelActions';
-const Portfolio = ({portfolioItems,detailItem}) => {
-    const details = async Item =>  {
+const Portfolio = ({portfolioData,detailItem}) => {
+    const {PortfolioItems,PortfolioTitle} = portfolioData;
+    const details = Item =>  {
         const body = document.getElementsByTagName('body')[0];
         body.classList.add('modal-open');
-        await detailItem(Item);
-        document.getElementById('portfolioModal1').focus();
+        detailItem(Item);
     }
     return (
             <section className="page-section portfolio" id="portfolio">
             <div className="container">
-                <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+                <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0">{PortfolioTitle}</h2>
                 <div className="divider-custom">
                     <div className="divider-custom-line"></div>
                     <div className="divider-custom-icon">
@@ -22,7 +22,7 @@ const Portfolio = ({portfolioItems,detailItem}) => {
                 </div>
                 <div className="row">
                     {
-                        portfolioItems.map((Item,Index) => {
+                        PortfolioItems.map((Item,Index) => {
                             return <PortfolioItem detailItem={() => details(Item)} key={Index} imgSrc={Item.image} />
                         })
                     }

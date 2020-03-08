@@ -5,7 +5,7 @@ import {fadeIn} from 'react-animations';
 const Bounce = styled.div`animation:300ms ${keyframes`${fadeIn}`}`;
 
 const PortfolioModel = ({Payload,hideDetailItem}) => {
-    // const {image,name,des} = Payload;
+    const {image,name,des} = Payload;
     const hideDetails = () => {
         const body = document.getElementsByTagName('body')[0];
         body.classList.remove('modal-open');
@@ -33,7 +33,7 @@ const PortfolioModel = ({Payload,hideDetailItem}) => {
                         <div className="container">
                             <div className="row justify-content-center">
                                 <div className="col-lg-8">
-                                    <h2 className="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
+                                    <h2 className="portfolio-modal-title text-secondary text-uppercase mb-0">{name}</h2>
                                     <div className="divider-custom">
                                         <div className="divider-custom-line"></div>
                                         <div className="divider-custom-icon">
@@ -41,11 +41,12 @@ const PortfolioModel = ({Payload,hideDetailItem}) => {
                                         </div>
                                         <div className="divider-custom-line"></div>
                                     </div>
-                                    <img className="img-fluid rounded mb-5" src="img/portfolio/cake.png" alt=""/>
-                                    <p className="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis
-                                        inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod
-                                        consequuntur itaque. Nam.</p>
+                                    <img className="img-fluid rounded mb-5" src={image} alt=""/>
+                                    <p className="mb-5">
+                                        {
+                                            des
+                                        }
+                                    </p>
                                     <button className="btn btn-primary" href="#" data-dismiss="modal" onClick={hideDetails}>
                                         <i className="fas fa-times fa-fw"></i>
                                         Close Window
