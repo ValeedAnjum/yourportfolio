@@ -6,8 +6,8 @@ const Portfolio = ({portfolioItems,detailItem}) => {
     const details = async Item =>  {
         const body = document.getElementsByTagName('body')[0];
         body.classList.add('modal-open');
-        detailItem(Item);
-        //document.getElementById('portfolioModal1').focus();
+        await detailItem(Item);
+        document.getElementById('portfolioModal1').focus();
     }
     return (
             <section className="page-section portfolio" id="portfolio">

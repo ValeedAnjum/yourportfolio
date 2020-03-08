@@ -1,4 +1,8 @@
 import React from 'react'
+import styled,{keyframes} from 'styled-components';
+import {fadeIn} from 'react-animations';
+
+const Bounce = styled.div`animation:300ms ${keyframes`${fadeIn}`}`;
 
 const PortfolioModel = ({Payload,hideDetailItem}) => {
     // const {image,name,des} = Payload;
@@ -12,15 +16,13 @@ const PortfolioModel = ({Payload,hideDetailItem}) => {
             <div
             className="portfolio-modal modal fade show"
             id="portfolioModal1"
-            tabIndex="-1"
-            role="dialog"
-            aria-labelledby="portfolioModal2Label"
             style={{
             'display': 'block',
             'paddingRight': '17px'
         }}
             aria-modal="true">
             <div className="modal-dialog modal-xl" role="document">
+                <Bounce>
                 <div className="modal-content">
                     <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">
@@ -53,9 +55,10 @@ const PortfolioModel = ({Payload,hideDetailItem}) => {
                         </div>
                     </div>
                 </div>
+            </Bounce>
             </div>
         </div>
-        <div className="modal-backdrop fade show"></div>
+        <div className="modal-backdrop fade show" id="modal-backdrop"></div>
         </React.Fragment>
     )
 }
