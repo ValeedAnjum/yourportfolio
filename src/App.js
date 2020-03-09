@@ -13,8 +13,6 @@ function App() {
     <React.Fragment>
       <Navbar navData={configuration.Navbar} />
       <Masthead mastData={configuration.Masthead} />
-      {/* <Portfolio portfolioItems = 
-      {[{image:'img/portfolio/cabin.png',name:'p1',des:'des p1'},{image:'img/portfolio/cake.png',name:'p2',des:'des p2'}]}/> */}
       <Portfolio portfolioData={configuration.Portfolio} />
       <About aboutData={configuration.About} />
       <Contact />

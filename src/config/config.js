@@ -25,8 +25,8 @@ export const configuration = {
         well as optional SASS stylesheets for easy customization.`,
         AboutMe2Sec:`You can create your own custom avatar for the masthead, change the icon in the dividers,\ 
         and add your email address to the contact form to make it fully functional!`,
-        ButtonName:'You Can Down',
+        ButtonName:'Download !',
         ButtonIconFontAwesome:'fas fa-download mr-2',
-        ButtonSite:'https://github.com/ValeedAnjum'
+        ButtonSite:'https://github.com/ValeedAnjum/yourportfolio'
     }
 }
