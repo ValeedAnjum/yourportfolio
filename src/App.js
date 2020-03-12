@@ -16,7 +16,7 @@ function App() {
       <Portfolio portfolioData={configuration.Portfolio} />
       <About aboutData={configuration.About} />
       <Contact />
-      <Footer />
+      <Footer footerData={configuration.Footer} />
       <ModelManger />
     </React.Fragment>
   );

@@ -1,25 +1,36 @@
-import React from 'react'
-import {combineValidators, isRequired} from 'revalidate';
-import {reduxForm, Field} from 'redux-form';
-import {connect} from 'react-redux';
-import Textinput from '../Comman/TextInput/TextInput';
-import Textarea from '../Comman/TextArea/TextArea';
-const validate = combineValidators({
-    name: isRequired({message: 'name Is R'}),
-    email: isRequired({message: 'Email Is R'}),
-    phone: isRequired({message: "Phone No Is Required"}),
-    message: isRequired({message: 'Message Should Not Be Empty'})
-})
-const Contact = (props) => {
+import React,{useState} from 'react'
 
-    const submitVal = val => {
-        console.log(val);
+const Contact = () => {
+    const [Name,setName] = useState('');
+    const [Email,setEmail] = useState('');
+    const [PhoneNo,setPhoneNo] = useState('');
+    const [Message,setMessage] = useState('');
+    const chngHandler = event => {
+        switch(event.target.id){
+            case 'name':
+                setName(event.target.value);
+                break;
+            case 'email':
+                setEmail(event.target.value);
+                break;
+            case 'phone':
+                setPhoneNo(event.target.value);
+                break;
+            case 'message':
+                setMessage(event.target.value);
+                break;
+            default:
+        }
+    }
+    const submitValues = e => {
+        e.preventDefault();
+        window.open(`mailto:allinone644@gmail.com?subject=subject&body=" Name ":${Name} " Phone No ":${PhoneNo} " Message ":${Message}`);
+
     }
     return (
         <section className="page-section" id="contact">
             <div className="container">
-                <h2
-                    className="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+                <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
                 <div className="divider-custom">
                     <div className="divider-custom-line"></div>
                     <div className="divider-custom-icon">
@@ -29,62 +40,71 @@ const Contact = (props) => {
                 </div>
                 <div className="row">
                     <div className="col-lg-8 mx-auto">
-                        <form
-                            name="sentMessage"
-                            id="contactForm"
-                            noValidate="novalidate"
-                            onSubmit={props.handleSubmit(submitVal)}>
+                        <form name="sentMessage" id="contactForm"  onSubmit={submitValues}>
                             <div className="control-group">
                                 <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Name</label>
-                                    <Field
-                                        name="name"
-                                        component={Textinput}
+                                    <input
+                                        onChange={chngHandler}
                                         className="form-control"
-                                        placeholder="NAME"
-                                        type="text"/>
+                                        id="name"
+                                        type="text"
+                                        placeholder="Name"
+                                        value={Name}
+                                        required="required"
+                                        data-validation-required-message="Please enter your name."/>
                                     <p className="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div className="control-group">
                                 <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Email Address</label>
-                                    <Field
-                                        name="email"
-                                        component={Textinput}
+                                    <input
+                                        onChange={chngHandler}
                                         className="form-control"
-                                        placeholder="EMAIL"
-                                        type="email"/>
+                                        id="email"
+                                        type="email"
+                                        placeholder="Email Address"
+                                        value={Email}
+                                        required="required"
+                                        data-validation-required-message="Please enter your email address."/>
                                     <p className="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div className="control-group">
                                 <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Phone Number</label>
-                                    <Field
-                                        name="phone"
-                                        component={Textinput}
+                                    <input
+                                        onChange={chngHandler}
                                         className="form-control"
-                                        placeholder="PHONE"
-                                        type="tel"/>
+                                        id="phone"
+                                        type="tel"
+                                        placeholder="Phone Number"
+                                        value={PhoneNo}
+                                        required="required"
+                                        data-validation-required-message="Please enter your phone number."/>
                                     <p className="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div className="control-group">
                                 <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Message</label>
-                                    <Field
-                                        name="message"
-                                        component={Textarea}
+                                    <textarea
+                                        onChange={chngHandler}
                                         className="form-control"
-                                        placeholder="MESSAGE"/>
+                                        id="message"
+                                        rows="5"
+                                        placeholder="Message"
+                                        value={Message}
+                                        required="required"
+                                        data-validation-required-message="Please enter a message."></textarea>
                                     <p className="help-block text-danger"></p>
                                 </div>
                             </div>
                             <br/>
                             <div id="success"></div>
                             <div className="form-group">
-                                <button className="btn btn-primary btn-xl" type="submit">Send</button>
+                                <button  className="btn btn-primary btn-xl" type="submit" >Send</button>
                             </div>
                         </form>
                     </div>
@@ -93,8 +113,5 @@ const Contact = (props) => {
         </section>
     )
 }
-const mapState = state => {
-    console.log(state.form);
-    return {}
-}
-export default connect(mapState, null)(reduxForm({form: 'ContactForm', validate})((Contact)));
+
+export default Contact;
