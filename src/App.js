@@ -13,9 +13,9 @@ function App() {
     <React.Fragment>
       <Navbar navData={configuration.Navbar} />
       <Masthead mastData={configuration.Masthead} />
-      <Portfolio portfolioData={configuration.Portfolio} />
-      <About aboutData={configuration.About} />
-      <Contact />
+      <Portfolio portfolioData={configuration.Portfolio}  id={configuration.Navbar.NabarOptions[0]} />
+      <About aboutData={configuration.About} id={configuration.Navbar.NabarOptions[1]} />
+      <Contact id={configuration.Navbar.NabarOptions[2]} />
       <Footer footerData={configuration.Footer} />
       <ModelManger />
     </React.Fragment>

@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 
-const Contact = () => {
+const Contact = ({id}) => {
     const [Name,setName] = useState('');
     const [Email,setEmail] = useState('');
     const [PhoneNo,setPhoneNo] = useState('');
@@ -28,7 +28,7 @@ const Contact = () => {
 
     }
     return (
-        <section className="page-section" id="contact">
+        <section className="page-section" id={id}>
             <div className="container">
                 <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
                 <div className="divider-custom">

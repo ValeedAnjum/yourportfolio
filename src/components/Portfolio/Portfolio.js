@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux';
 import PortfolioItem from './PortfolioItem';
 import { openPortfolioModel } from '../../store/Actions/ModelActions';
-const Portfolio = ({portfolioData,detailItem}) => {
+const Portfolio = ({portfolioData,detailItem,id}) => {
     const {PortfolioItems,PortfolioTitle} = portfolioData;
     const details = Item =>  {
         const body = document.getElementsByTagName('body')[0];
@@ -10,7 +10,7 @@ const Portfolio = ({portfolioData,detailItem}) => {
         detailItem(Item);
     }
     return (
-            <section className="page-section portfolio" id="portfolio">
+            <section className="page-section portfolio" id={id}>
             <div className="container">
                 <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0">{PortfolioTitle}</h2>
                 <div className="divider-custom">

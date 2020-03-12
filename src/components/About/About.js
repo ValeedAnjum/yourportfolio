@@ -1,9 +1,9 @@
 import React from 'react'
 
-const About = ({aboutData}) => {
+const About = ({aboutData,id}) => {
     const {AboutTitle,AboutMe1Sec,AboutMe2Sec,ButtonName,ButtonIconFontAwesome,ButtonSite} = aboutData;
     return (
-        <section className="page-section bg-primary text-white mb-0" id="about">
+        <section className="page-section bg-primary text-white mb-0" id={id}>
             <div className="container">
                 <h2 className="page-section-heading text-center text-uppercase text-white">{AboutTitle}</h2>
                 <div className="divider-custom divider-light">
