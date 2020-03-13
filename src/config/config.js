@@ -1,6 +1,6 @@
 export const configuration = {
     Navbar:{
-        NavbarTitle:'Valeed Anjum',
+        NavbarTitle:'Valeed Anjum Siddiqui',
         NabarOptions:['portfolio','about','contact']
     },
     Masthead:{
