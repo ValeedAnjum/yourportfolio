@@ -5,8 +5,7 @@
 
 ## Preview
 
-[![YourPortfolio Preview](https://raw.githubusercontent.com/ValeedAnjum/yourportfolio/master/public/img/yourportfolio.png)
-
+[![YourPortfolio Preview](https://raw.githubusercontent.com/ValeedAnjum/yourportfolio/master/public/img/yourportfolio.png)](https://valeedanjum.github.io/yourportfolio/)
 **[View Live Preview](https://valeedanjum.github.io/yourportfolio/)**
 
 ## Status
