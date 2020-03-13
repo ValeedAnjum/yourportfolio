@@ -1,4 +1,6 @@
 import React from 'react';
+import './addons/css/all.min.css';
+import './addons/css/freelancer.min.css';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Masthead from './components/Masthead/Masthead';
