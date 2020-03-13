@@ -5,10 +5,10 @@
 
 ## Preview
 
-[![YourPortfolio Preview](https://github.com/ValeedAnjum/yourportfolio/blob/master/public/img/YOURPORTFOLIO.png)
+[![YourPortfolio Preview](https://raw.githubusercontent.com/ValeedAnjum/yourportfolio/master/public/img/yourportfolio.png)
 
-**[View Live Preview](https://easynpm-7c7ed.firebaseapp.com/)**
+**[View Live Preview](https://valeedanjum.github.io/yourportfolio/)**
 
 ## Status
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ValeedAnjum/easynpm/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ValeedAnjum/yourportfolio/blob/master/LICENSE)
