@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/yourportfolio/static/css/main.87ce522f.chunk.css",
+    "main.js": "/yourportfolio/static/js/main.6a15df56.chunk.js",
+    "main.js.map": "/yourportfolio/static/js/main.6a15df56.chunk.js.map",
+    "runtime-main.js": "/yourportfolio/static/js/runtime-main.6a693087.js",
+    "runtime-main.js.map": "/yourportfolio/static/js/runtime-main.6a693087.js.map",
+    "static/js/2.45936d7f.chunk.js": "/yourportfolio/static/js/2.45936d7f.chunk.js",
+    "static/js/2.45936d7f.chunk.js.map": "/yourportfolio/static/js/2.45936d7f.chunk.js.map",
+    "index.html": "/yourportfolio/index.html",
+    "precache-manifest.88a6a51558a6ee3f492feb30e2d0b768.js": "/yourportfolio/precache-manifest.88a6a51558a6ee3f492feb30e2d0b768.js",
+    "service-worker.js": "/yourportfolio/service-worker.js",
+    "static/css/main.87ce522f.chunk.css.map": "/yourportfolio/static/css/main.87ce522f.chunk.css.map",
+    "static/js/2.45936d7f.chunk.js.LICENSE.txt": "/yourportfolio/static/js/2.45936d7f.chunk.js.LICENSE.txt",
+    "static/media/all.min.css": "/yourportfolio/static/media/fa-solid-900.d6d8d5da.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6a693087.js",
+    "static/js/2.45936d7f.chunk.js",
+    "static/css/main.87ce522f.chunk.css",
+    "static/js/main.6a15df56.chunk.js"
+  ]
+}
