@@ -16,7 +16,7 @@
 
 You can change the whole look of the template just changing values in src/config/config.js
 
-## Values
+## Config.js
 
 
 ```bash
