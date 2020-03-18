@@ -1,7 +1,7 @@
 # [YourPortfolio](https://valeedanjum.github.io/yourportfolio/)
 
 
-[YourPortfolio](https://valeedanjum.github.io/yourportfolio/) yourportfolio is a readymade react portfolio template that could be used to develop portfolio sites in minutes just changing values of config.js.
+[YourPortfolio](https://valeedanjum.github.io/yourportfolio/) is a readymade react portfolio template that could be used to develop portfolio sites in minutes just changing values of config.js.
 
 ## Preview
 
